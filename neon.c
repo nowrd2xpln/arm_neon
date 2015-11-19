@@ -35,26 +35,18 @@ neontest(unsigned short int *a, unsigned short int *b,
 }
 
 int
-main(void)
+main(int argc, char * argv[])
 {
-	int i;
-	
-	for (i=0; i<8; i++)
-	{
-		data1[i]=i*10;
-		data2[i]=5;
-		out[i]=0;
+	FILE *img = NULL;
+	int i = 0;
+
+	printf("argc %d\n", argc);
+
+	for(i = 0; i < argc; ++i){
+		printf("argv[%d]: %s\n", i, argv[i]);
 	}
 
-	neontest(data1, data2, out);
 
-	printf("output is: ");
-	for (i=0; i<7; i++)
-	{
-		printf("%d, ", out[i]);
-	}
-	printf("%d\n", out[i]);
-
-  return(0);
+	return(0);
 }
 
